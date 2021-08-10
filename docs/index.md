@@ -1,4 +1,4 @@
-# itpminer
+# Welcome to itpminer
 
 
 [![image](https://img.shields.io/pypi/v/itpminer.svg)](https://pypi.python.org/pypi/itpminer)
@@ -8,7 +8,7 @@
 
 
 -   Free software: MIT license
--   Documentation: https://chanyoungs.github.io/itpminer
+-   Documentation: <https://chanyoungs.github.io/itpminer>
     
 
 ## Features
