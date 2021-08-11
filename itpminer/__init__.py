@@ -1,3 +1,4 @@
+__version__ = "0.0.1"
 from itpminer.itp_miner import itp_miner
 # import sys
 # import os
