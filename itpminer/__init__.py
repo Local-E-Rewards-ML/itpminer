@@ -1,5 +1,6 @@
-"""Top-level package for itpminer."""
-
-__author__ = """Local E"""
-__email__ = 'csong@locale.app'
-__version__ = '0.0.1'
+__version__ = '0.0.2'
+from itpminer.itp_miner import itp_miner
+# import sys
+# import os
+# root = os.path.dirname(os.path.realpath(__file__))
+# sys.path.append(root)
