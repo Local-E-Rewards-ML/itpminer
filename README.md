@@ -1,6 +1,7 @@
 # itpminer
 
 [![image](https://img.shields.io/pypi/v/itpminer.svg)](https://pypi.python.org/pypi/itpminer)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Local-eRewards/itpminer/blob/main/demo.ipynb)
 
 **Python implementation of ITPMiner algorithm**[[1]](#1)
 
@@ -10,8 +11,38 @@
 ## Features
 
 -   TODO
-    - Write read-me.
+    -   Write read-me.
 
+## Example
+See [Demo Notebook](demo.ipynb) to see the outputs as well.
+
+```python
+# Import itpminer and create a dummy database of inter transactions
+from itpminer.utils import association_rules, rules_graph
+from itpminer import itp_miner
+
+database = [
+    ["a", "b"],
+    ["a", "c", "d"],
+    ["a"],
+    ["a", "b", "c", "d"],
+    ["a", "b", "d"],
+    ["a", "d"]
+]
+
+# Mine frequent inter-transactional patterns
+tree_dict, frequent_patterns_dict, frequent_patterns_list, frequent_patterns_dataframe = itp_miner(
+    database=database)
+
+# Derive association rules from frequent patterns
+rules_dict, rules_display_dict, rules_dataframe = association_rules(
+    tree_dict=tree_dict)
+print(rules_dataframe)
+
+# Plot a network graph between extended items
+rules_graph(rules_display_dict=rules_display_dict, rules_dict=rules_dict)
+
+```
 ## Credits
 
 This package was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and the [giswqs/pypackage](https://github.com/giswqs/pypackage) project template.
