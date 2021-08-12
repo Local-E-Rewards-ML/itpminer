@@ -1,4 +1,4 @@
-# itpminer
+# Inter-Transactional Patterns Miner(itpminer)
 
 [![image](https://img.shields.io/pypi/v/itpminer.svg)](https://pypi.python.org/pypi/itpminer)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Local-eRewards/itpminer/blob/main/demo.ipynb)
@@ -7,15 +7,16 @@
 **Python implementation of ITPMiner algorithm**[[1]](#1)
 
 -   Free software: MIT license
--   Documentation: https://chanyoungs.github.io/itpminer
 
 ## Features
 
--   TODO
-    -   Write read-me.
+-   Mine frequent inter-transactional items
+-   Generate association rules between inter-transactional items
+-   Generate a network graph of association rules
 
 ## Example
-See [Demo Notebook](demo.ipynb) to see the outputs as well.
+
+See [demo.ipynb](demo.ipynb) or [Colab Notebook](https://colab.research.google.com/github/Local-eRewards/itpminer/blob/main/demo.ipynb) to see the outputs as well. The code below is available on [demo.py](demo.py).
 
 ```python
 # Import itpminer and create a dummy database of inter transactions
@@ -44,6 +45,7 @@ print(rules_dataframe)
 rules_graph(rules_display_dict=rules_display_dict, rules_dict=rules_dict)
 
 ```
+
 ## Credits
 
 This package was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and the [giswqs/pypackage](https://github.com/giswqs/pypackage) project template.
