@@ -13,6 +13,7 @@
 -   Mine frequent inter-transactional items
 -   Generate association rules between inter-transactional items
 -   Generate a network graph of association rules
+-   Type definitions provided for [mypy](http://www.mypy-lang.org/) type checker
 
 ## Example
 
