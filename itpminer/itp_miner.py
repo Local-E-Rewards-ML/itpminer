@@ -90,6 +90,68 @@ FrequentPatternsDictType = Dict[PatternType, int]
 
 
 def itp_miner(database: List[List], min_sup: float = 0.5, max_span: int = 2) -> Tuple[TreeDictType, FrequentPatternsDictType, FrequentPatternsListType, pd.DataFrame]:
+    """
+    Main inter-transactional mining algorithm
+
+    Parameters
+    ----------
+    database : List[List]
+        Inter-transactional database which is a list of list of items(str/int)
+
+    Optional Parameters
+    ----------
+    min_sup : float(default = 0.5)
+        Minimim support value between 0 and 1 used for mining
+
+    max_span: int(default = 2)
+        Maximum number of time steps considered for inter-transactional patterns
+
+
+    Returns
+    -------
+    tree_dict: Dict[PatternType, Node]
+        A dictionary containing in which the key is the inter-transactional pattern and the corresponding value is the Node object from the tree graph between the patterns.
+        The root node can be retrieved by the key of empty tuple: ``root_node = tree_dict[()]``
+
+    frequent_patterns_dict: Dict[PatternType, int]
+        A dictionary containing in which the key is the inter-transactional pattern and the corresponding value is the frequency from mining.
+
+    frequent_patterns_list: List[PatternType]
+        A simple list of frequent inter-transactional patterns above the minimum support.
+
+    frequent_patterns_dataframe: pd.DataFrame
+        A pandas dataframe with two columns: Inter-transactional pattern & Support
+
+    Examples
+    --------
+    ::
+
+        # Import itpminer and create a dummy database of inter transactions
+        from itpminer.utils import association_rules, rules_graph
+        from itpminer import itp_miner
+
+        database = [
+            ["a", "b"],
+            ["a", "c", "d"],
+            ["a"],
+            ["a", "b", "c", "d"],
+            ["a", "b", "d"],
+            ["a", "d"]
+        ]
+
+        # Mine frequent inter-transactional patterns
+        tree_dict, frequent_patterns_dict, frequent_patterns_list, frequent_patterns_dataframe = itp_miner(
+            database=database)
+
+        # Derive association rules from frequent patterns
+        rules_dict, rules_display_dict, rules_dataframe = association_rules(
+            tree_dict=tree_dict)
+        print(rules_dataframe)
+
+        # Plot a network graph between extended items
+        rules_graph(rules_display_dict=rules_display_dict, rules_dict=rules_dict)
+
+    """
     database = [sorted(list(set(itemset))) for itemset in database]
     min_freq: int = int(min_sup * len(database))
 
@@ -142,5 +204,7 @@ def itp_miner(database: List[List], min_sup: float = 0.5, max_span: int = 2) -> 
 
     frequent_patterns_df = pd.DataFrame(
         frequent_patterns_list, columns=["Pattern", "Support"])
+    frequent_patterns_df["Support"] = frequent_patterns_df["Support"] / \
+        len(database)
 
     return tree_dict, frequent_patterns_dict, frequent_patterns_list, frequent_patterns_df
