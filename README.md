@@ -39,7 +39,7 @@ tree_dict, frequent_patterns_dict, frequent_patterns_list, frequent_patterns_dat
 ```
 
 <p align="center">
-<img src="images/frequent_patterns.png" alt="frequent_patterns_dataframe" width="300"/>
+<img src="https://raw.githubusercontent.com/Local-E-Rewards-ML/itpminer/main/images/frequent_patterns.png" alt="frequent_patterns_dataframe" width="300"/>
 </p>
 
 ```python
@@ -49,7 +49,7 @@ rules_dict, rules_display_dict, rules_dataframe = association_rules(
 ```
 
 <p align="center">
-<img src="images/association_rules.png" alt="rules_dataframe" width="800"/>
+<img src="https://raw.githubusercontent.com/Local-E-Rewards-ML/itpminer/main/images/association_rules.png" alt="rules_dataframe" width="800"/>
 </p>
 
 ```python
@@ -58,7 +58,7 @@ rules_graph(rules_display_dict=rules_display_dict, rules_dict=rules_dict)
 ```
 
 <p align="center">
-<img src="images/rules_graph.png" alt="rules_graph" width="800"/>
+<img src="https://raw.githubusercontent.com/Local-E-Rewards-ML/itpminer/main/images/rules_graph.png" alt="rules_graph" width="800"/>
 </p>
 
 ## Credits
