@@ -1,21 +1,65 @@
-# itpminer
+# Inter-Transactional Patterns Miner(itpminer)
 
 [![image](https://img.shields.io/pypi/v/itpminer.svg)](https://pypi.python.org/pypi/itpminer)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Local-eRewards/itpminer/blob/main/demo.ipynb)
+[![image](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<<<<<<< HEAD
-hello
-**Python implementation of ITPMiner algorithm**
-
-=======
 **Python implementation of ITPMiner algorithm**[[1]](#1)
->>>>>>> a246a5afc6f641118af26b79b5aad4861f177718
 
 -   Free software: MIT license
--   Documentation: https://chanyoungs.github.io/itpminer
 
 ## Features
 
--   TODO
+-   Mine frequent inter-transactional items
+-   Generate association rules between inter-transactional items
+-   Generate a network graph of association rules
+-   Type definitions provided for [mypy](http://www.mypy-lang.org/) type checker
+
+## Example
+
+See also [demo.ipynb](demo.ipynb) or [Colab Notebook](https://colab.research.google.com/github/Local-eRewards/itpminer/blob/main/demo.ipynb). The code below is available on [demo.py](demo.py).
+
+```python
+# Import itpminer and create a dummy database of inter transactions
+from itpminer.utils import association_rules, rules_graph
+from itpminer import itp_miner
+
+database = [
+    ["a", "b"],
+    ["a", "c", "d"],
+    ["a"],
+    ["a", "b", "c", "d"],
+    ["a", "b", "d"],
+    ["a", "d"]
+]
+
+# Mine frequent inter-transactional patterns
+tree_dict, frequent_patterns_dict, frequent_patterns_list, frequent_patterns_dataframe = itp_miner(
+    database=database)
+```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Local-E-Rewards-ML/itpminer/main/images/frequent_patterns.png" alt="frequent_patterns_dataframe" width="300"/>
+</p>
+
+```python
+# Derive association rules from frequent patterns
+rules_dict, rules_display_dict, rules_dataframe = association_rules(
+    tree_dict=tree_dict)
+```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Local-E-Rewards-ML/itpminer/main/images/association_rules.png" alt="rules_dataframe" width="800"/>
+</p>
+
+```python
+# Plot a network graph between extended items
+rules_graph(rules_display_dict=rules_display_dict, rules_dict=rules_dict)
+```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Local-E-Rewards-ML/itpminer/main/images/rules_graph.png" alt="rules_graph" width="800"/>
+</p>
 
 ## Credits
 
