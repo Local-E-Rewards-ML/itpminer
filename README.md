@@ -2,7 +2,13 @@
 
 [![image](https://img.shields.io/pypi/v/itpminer.svg)](https://pypi.python.org/pypi/itpminer)
 
+<<<<<<< HEAD
+hello
+**Python implementation of ITPMiner algorithm**
+
+=======
 **Python implementation of ITPMiner algorithm**[[1]](#1)
+>>>>>>> a246a5afc6f641118af26b79b5aad4861f177718
 
 -   Free software: MIT license
 -   Documentation: https://chanyoungs.github.io/itpminer
@@ -10,7 +16,6 @@
 ## Features
 
 -   TODO
-    - Write read-me.
 
 ## Credits
 
