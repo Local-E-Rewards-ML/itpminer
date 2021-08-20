@@ -1,8 +1,8 @@
 site_name: itpminer
 
-site_url: https://chanyoungs.github.io/itpminer
+site_url: https://github.com/Local-E-Rewards-ML/itpminer
 
-repo_url: https://github.com/chanyoungs/itpminer
+repo_url: https://github.com/Local-E-Rewards-ML/itpminer
 
 theme:
     palette:
@@ -24,7 +24,7 @@ plugins:
     - mkdocs-jupyter:
           include_source: True
           # execute: True
-          
+
 markdown_extensions:
     - attr_list
     - pymdownx.superfences
@@ -43,6 +43,6 @@ nav:
     - Usage: usage.md
     - Contributing: contributing.md
     - FAQ: faq.md
-    - Report Issues: https://github.com/chanyoungs/itpminer/issues
+    - Report Issues: https://github.com/Local-E-Rewards-ML/itpminer/issues
     - API Reference:
           - itpminer module: itpminer.md

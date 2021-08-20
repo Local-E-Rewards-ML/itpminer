@@ -19,5 +19,5 @@ The sources for itpminer can be downloaded from the Github repo.
 You can clone the public repository:
 
 ```
-git clone git://github.com/chanyoungs/itpminer
+git clone git://github.com/Local-E-Rewards-ML/itpminer
 ```

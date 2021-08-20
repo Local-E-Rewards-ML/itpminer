@@ -52,7 +52,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/chanyoungs/itpminer',
+    url='https://github.com/Local-E-Rewards-ML/itpminer',
     version='0.0.6',
     zip_safe=False,
 )
