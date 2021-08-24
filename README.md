@@ -15,6 +15,20 @@
 -   Generate a network graph of association rules
 -   Type definitions provided for [mypy](http://www.mypy-lang.org/) type checker
 
+## Installation
+
+PIP:
+
+```
+pip install itpminer
+```
+
+Conda:
+
+```
+conda install -c conda-forge itpminer
+```
+
 ## Example
 
 See also [demo.ipynb](demo.ipynb) or [Colab Notebook](https://colab.research.google.com/github/Local-eRewards/itpminer/blob/main/demo.ipynb). The code below is available on [demo.py](demo.py).
