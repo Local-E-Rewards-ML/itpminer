@@ -53,6 +53,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/Local-E-Rewards-ML/itpminer',
-    version='version='0.0.9'',
+    version='version='0.0.10'',
     zip_safe=False,
 )
