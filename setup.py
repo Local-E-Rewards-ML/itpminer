@@ -16,13 +16,14 @@ with io.open(op.join(here, "requirements.txt"), encoding="utf-8") as f:
     all_reqs = f.read().split("\n")
 
 install_requires = [x.strip() for x in all_reqs if "git+" not in x]
-dependency_links = [x.strip().replace("git+", "") for x in all_reqs if "git+" not in x]
+dependency_links = [x.strip().replace("git+", "")
+                    for x in all_reqs if "git+" not in x]
 
-requirements = [ ]
+requirements = []
 
-setup_requirements = [ ]
+setup_requirements = []
 
-test_requirements = [ ]
+test_requirements = []
 
 setup(
     author="Local E",
@@ -53,6 +54,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/Local-E-Rewards-ML/itpminer',
-    version='version='0.0.10'',
+    version='0.0.10',
     zip_safe=False,
 )
